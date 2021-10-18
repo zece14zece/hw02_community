@@ -10,12 +10,12 @@ class Group(models.Model):
     description = models.TextField()
 
     def __str__(self):
-        return (self.title)
+        return self.title
 
 
 class Post(models.Model):
     text = models.TextField()
-    pub_date = models.DateTimeField(auto_now_add=True)
+    pub_date = models.DateTimeField(auto_now_add=True, verbose_name="Post")
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -26,6 +26,11 @@ class Post(models.Model):
         on_delete=models.SET_NULL,
         blank=True,
         null=True,
+        verbose_name="Group",
+        related_name='posts'
     )
 
+    class Meta:
+
+        ordering = ['-pub_date']
 # Create your models here.

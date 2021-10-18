@@ -5,7 +5,15 @@
 
     {% for post in posts %}
     <h3>
-        Автор: {{ post.author.get_full_name }}, Дата публикации: {{ post.pub_date|date:"d M Y" }}
+    <article>
+        <ul>
+          <li>
+             Автор: {{ post.author.get_full_name }},
+            </li>
+            <li>
+             Дата публикации: {{ post.pub_date|date:"d июля Y" }}
+            </li>
+          </ul> 
     </h3>
     <p>{{ post.text|linebreaksbr }}</p>
     <hr>
