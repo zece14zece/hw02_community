@@ -4,12 +4,11 @@
 {% block content %}
 
 
-<p> {{group.description}} </p>    
-{% for post in posts %}
+  <p> {{group.description}} </p>    
+  {% for post in posts %}
 
-
-    <h3>
-        Автор: {{ post.author.get_full_name }}, Дата публикации: {{ post.pub_date|date:"d M Y" }}
+  <h3>
+    Автор: {{ post.author.get_full_name }}, Дата публикации: {{ post.pub_date|date:"d Июля Y" }}
     </h3>
     <p>{{ post.text|linebreaksbr }}</p>
     <hr>
