@@ -1,25 +1,24 @@
 {% extends "base.html" %}
-{% block title %}Последние обновления на сайте{% endblock %}
-{% block header %}Последние обновления на сайте{% endblock %}
+{% block title %}Последние обновления на сайте
+{% endblock %}
+{% block header %}Последние обновления на сайте
+{% endblock %}
 {% block content %}
-
-
   {% for post in posts %}
     <h3>
-    <article>
-
-
+      <article>
         <ul>
           <li>
-             Автор: {{ post.author.get_username }}
-            </li>
-            <li>
-             Дата публикации: {{ post.pub_date|date:"d июля Y" }}
-            </li>
-          </ul> 
-    </h3>
-    <p>{{ post.text|linebreaksbr }}</p>
-    <hr>
-  {% endfor %}
-
-{% endblock %}
+            Автор:
+            {{ post.author.get_username }}
+          </li>
+          <li>
+            Дата публикации:
+            {{ post.pub_date|date:"d июля Y" }}
+          </li>
+        </ul>
+      </h3>
+      <p>{{ post.text|linebreaksbr }}</p>
+      <hr>
+      {% endfor %}
+    {% endblock %}
